@@ -1,117 +1,101 @@
-/* Reset some default styles */
-
-  nav {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: #333;
-    color: white;
-    transition: transform 0.3s ease;
-  }
-
-  nav.hidden {
-    transform: translateY(-100%);
-  }
-
-  /* 假设内容区域 */
-  .content {
-    padding: 20px;
-    margin-top: 50px; /* 为了避免内容被导航栏遮挡 */
-  }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Basic styling */
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    background-color: #111;
+    color: #fff;
+    overflow-x: hidden; /* 防止水平滚动条 */
 }
 
-
+header {
+    background-color: #007BFF; /* 深蓝色调 */
+    padding: 20px;
+    text-align: center;
+    position: sticky; /* 使其固定在顶部 */
+    top: 0;
+    z-index: 999;
+}
 
 nav ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
 }
 
-nav ul li {
-    margin-right: 20px;
+nav li {
+    margin: 0 10px;
 }
 
-nav ul li a {
-    text-decoration: none;
+nav li a {
+    display: block;
     color: #fff;
-}
-
-.hero {
     text-align: center;
-    padding: 2em;
-}
-
-.about,
-.services,
-.goweb,
-.music,
-.contact {
-    padding: 2em;
-    margin: 2em 0;
-    background-color: #fff;
-}
-
-.about h2,
-.services h2,
-.contact h2 {
-    margin-bottom: 1em;
-}
-
-.services ul {
-    list-style-type: disc;
-    margin-left: 2em;
-}
-
-.contact a {
-    color: #007bff;
-}
-
-.copyLink{
-    text-decoration: underline;
-    color: blue;
-    cursor: pointer;
-}
-
-.gowebb a{
+    padding: 10px 20px;
     text-decoration: none;
-    font-size: 20px;
+    border-bottom: 3px solid transparent; /* 透明下边框 */
+    transition: all 0.3s ease; /* 平滑过渡效果 */
 }
 
-.gowebb a:hover{
-    text-decoration: none;
-    font-size: 20px;
+nav li a:hover {
+    border-bottom: 3px solid #fff; /* 悬停下划线效果 */
 }
 
-.goweb a:active{
-    text-decoration: none;
-    font-size: 20px;
+main {
+    margin: 40px auto;
+    max-width: 1200px; /* 限制内容宽度 */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1); /* 半透明背景 */
+    border-radius: 10px; /* 圆角 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 阴影效果 */
 }
 
-.gowebb{
-    
+footer {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3); /* 底部阴影 */
 }
 
-.music button{
-    border: 1px solid #00c29a;
-    color: #00c29a;
-    width: auto;
-    padding: 0 35px;
-    height: 350px;
+/* 添加一些科技感的元素，如渐变背景、线性装饰等 */
+.tech-bg {
+    background: linear-gradient(45deg, #007BFF, #00C4FF);
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.5; /* 透明度 */
 }
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 为页面添加一些装饰线条 */
+.decorative-line {
+    background: linear-gradient(to right, #007BFF, #00C4FF);
+    height: 2px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+/* 其他可能的装饰性元素，如按钮、图标等 */
+/* ... */
