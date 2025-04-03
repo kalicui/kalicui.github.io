@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background: linear-gradient(90deg, #4CAF50, #2E7D32); /* 从绿色到深绿色的渐变 */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    animation: slideIn 1s ease-out;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #FFD700;
+    transform: scale(1.1);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+footer {
+    background: linear-gradient(90deg, #333, #555); /* 从深灰色到浅灰色的渐变 */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    border-top: 3px solid #4CAF50;
+} 
