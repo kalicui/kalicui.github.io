@@ -19,15 +19,14 @@ header h1 {
 
 nav ul {
     display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    list-style-type: none;
-    padding: 0;
+    justify-content: space-around;
+    padding: 0 10px;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    flex-shrink: 0;
 }
 
 nav ul li a {
