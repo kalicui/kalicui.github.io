@@ -59,4 +59,36 @@ footer {
     width: 100%;
     bottom: 0;
     border-top: 3px solid #4CAF50;
+}
+
+/* 针对平板设备的样式 */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 15px;
+    }
+}
+
+/* 针对手机设备的样式 */
+@media (max-width: 480px) {
+    header {
+        padding: 15px 0;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main {
+        padding: 10px;
+    }
 } 
