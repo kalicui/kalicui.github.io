@@ -19,14 +19,21 @@ header h1 {
 
 nav ul {
     display: flex;
-    justify-content: space-around;
-    padding: 0 10px;
+    justify-content: space-between;
+    padding: 0 20px;
     overflow-x: auto;
     white-space: nowrap;
+    scrollbar-width: none; /* 隐藏滚动条 */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+nav ul::-webkit-scrollbar {
+    display: none; /* 隐藏滚动条 */
 }
 
 nav ul li {
     flex-shrink: 0;
+    margin: 0 10px;
 }
 
 nav ul li a {
@@ -61,11 +68,11 @@ footer {
     background: linear-gradient(90deg, #333, #555); /* 从深灰色到浅灰色的渐变 */
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 5px 0; /* 减少顶部和底部的内边距 */
     position: fixed;
     width: 100%;
     bottom: 0;
-    border-top: 3px solid #4CAF50;
+    border-top: 1px solid #4CAF50; /* 减少顶部边框的厚度 */
 }
 
 /* 针对平板设备的样式 */
@@ -77,6 +84,10 @@ footer {
     nav ul li {
         display: block;
         margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 4vw;
     }
 
     main {
@@ -95,6 +106,10 @@ footer {
         margin: 8px 0;
     }
 
+    nav ul li a {
+        font-size: 5vw;
+    }
+
     main {
         padding: 10px;
     }
@@ -103,4 +118,38 @@ footer {
         font-size: 6vw; /* 进一步调整字体大小以适应小屏幕 */
         line-height: 1.2; /* 调整行高 */
     }
-} 
+}
+
+.creator {
+    font-family: 'Georgia', serif; /* 使用更优雅的字体 */
+    font-size: 1.5em; /* 增大字体大小 */
+    color: #FFD700; /* 使用金色以吸引注意 */
+    background-color: #333; /* 使用深色背景以增加对比 */
+    padding: 15px; /* 增加内边距 */
+    border-radius: 10px; /* 添加更大的圆角 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加更明显的阴影 */
+    display: inline-block; /* 使背景色和阴影更明显 */
+    animation: float 3s infinite; /* 添加浮动动画 */
+    border: 2px solid #FFD700; /* 添加金色边框 */
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translatey(0px);
+    }
+    50% {
+        transform: translatey(-10px);
+    }
+}
+
+a {
+    color: #4CAF50; /* 链接的默认颜色 */
+    text-decoration: none; /* 去掉默认的下划线 */
+    transition: color 0.3s, text-shadow 0.3s, transform 0.3s; /* 添加过渡效果 */
+}
+
+a:hover {
+    color: #FFD700; /* 悬停时的颜色 */
+    text-shadow: 0 0 10px #FFD700; /* 悬停时的阴影效果 */
+    transform: scale(1.1); /* 悬停时的放大效果 */
+}
