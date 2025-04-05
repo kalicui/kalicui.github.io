@@ -12,6 +12,11 @@ header {
     animation: slideIn 1s ease-out;
 }
 
+header h1 {
+    font-size: 5vw; /* 使用视口宽度单位调整字体大小 */
+    white-space: nowrap; /* 确保文本在一行显示 */
+}
+
 nav ul {
     list-style-type: none;
     padding: 0;
