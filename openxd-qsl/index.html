@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="可自行配置的电子 QSL 卡与通联日志" />
+  <title>QSL & Logbook</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a id="site-call" class="site-name" href="#top" aria-label="QSL & Logbook 首页">QSL</a>
+      <span class="site-divider" aria-hidden="true"></span>
+      <span class="site-subtitle">QSL &amp; Logbook</span>
+      <nav class="site-nav" aria-label="页面导航">
+        <a href="#new-qso">录入通联</a><a href="#logbook">通联日志</a><a href="#station">电台</a>
+      </nav>
+    </div>
+  </header>
+  <main id="top" class="container">
+    <section class="intro"><h1>电子 QSL 卡</h1><p>填写自己的电台资料和一次通联，即可生成 QSL 图片并保存在本机日志中。</p></section>
+    <section id="new-qso" class="workspace" aria-label="QSL 生成器">
+      <form id="qso-form" class="entry-panel">
+        <div class="panel-title-row"><h2>录入通联</h2><button id="reset-btn" class="link-button" type="button">恢复示例</button></div>
+        <div class="form-grid">
+          <label>我的呼号<input id="myCall" name="myCall" maxlength="20" autocomplete="off" required /></label>
+          <label>我的 QTH<input id="myQth" name="myQth" maxlength="60" autocomplete="off" required /></label>
+          <label>对方呼号<input id="callSign" name="callSign" maxlength="20" autocomplete="off" required /></label>
+          <label>日期<input id="date" name="date" type="date" required /></label>
+          <label>时间（UTC）<input id="time" name="time" type="time" required /></label>
+          <label>频段<select id="band" name="band"></select></label>
+          <label>模式<select id="mode" name="mode"></select></label>
+          <label>RST<input id="rst" name="rst" maxlength="8" autocomplete="off" /></label>
+          <label class="form-grid__wide">对方 QTH<input id="qth" name="qth" maxlength="60" autocomplete="off" /></label>
+          <label class="form-grid__wide">备注<textarea id="note" name="note" maxlength="160" rows="3"></textarea></label>
+        </div>
+        <div class="form-actions"><button class="primary-button" type="submit">生成并下载 QSL</button><p id="status" class="status" role="status" aria-live="polite">日志仅保存在当前浏览器。</p></div>
+      </form>
+      <aside class="card-panel" aria-label="QSL 卡预览">
+        <div class="card-panel__head"><h2>QSL 卡预览</h2><span>BI3TNQ</span></div>
+        <div id="qsl-card" class="qsl-card">
+          <div class="qsl-card__topline">CONFIRMING TWO-WAY AMATEUR RADIO CONTACT</div>
+          <div id="card-call" class="qsl-card__call">BH1ABC</div>
+          <div class="qsl-card__from">de <strong id="card-my-call">BI3TNQ</strong></div>
+          <dl class="qsl-card__details">
+            <div><dt>DATE</dt><dd id="card-date">2026-08-17</dd></div><div><dt>UTC</dt><dd id="card-time">20:30</dd></div><div><dt>BAND</dt><dd id="card-band">14 MHz</dd></div>
+            <div><dt>MODE</dt><dd id="card-mode">FT8</dd></div><div><dt>RST</dt><dd id="card-rst">59</dd></div><div><dt>QTH</dt><dd id="card-qth">Shanghai</dd></div>
+          </dl>
+          <p id="card-note" class="qsl-card__note">73 and thank you for the nice QSO.</p>
+          <div class="qsl-card__footer"><span id="card-station">BI3TNQ · Shanghai, China</span><span>73!</span></div>
+        </div>
+      </aside>
+    </section>
+    <section id="logbook" class="logbook-panel">
+      <div class="panel-title-row"><div><h2>通联日志</h2><p>最近 <span id="log-count">0</span> 条</p></div><button id="clear-log-btn" class="link-button" type="button">清空本机日志</button></div>
+      <div class="table-wrap"><table><thead><tr><th>日期 / UTC</th><th>呼号</th><th>频段</th><th>模式</th><th>RST</th><th>QTH</th></tr></thead><tbody id="log-list"></tbody></table></div>
+    </section>
+    <section id="station" class="station-panel"><h2>使用说明</h2><p>“我的呼号”和“我的 QTH”会保留在当前浏览器中，并自动用于 QSL 卡、图片文件名和页面抬头。电台设备、天线等说明可按自己的情况直接修改 <code>index.html</code>。</p></section>
+  </main>
+  <footer>Open QSL &amp; Logbook · Pure frontend</footer>
+  <script src="./app.js"></script>
+</body>
+</html>
