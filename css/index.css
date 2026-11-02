@@ -87,7 +87,7 @@ footer {
 .hero::before {
   position: absolute;
   z-index: -1;
-  inset: 28px -140px 28px 240px;
+  inset: 28px 0 28px 32%;
   border-radius: 5px;
   background:
     linear-gradient(
@@ -284,6 +284,7 @@ footer {
 
 .footer-meta {
   display: flex;
+  flex-wrap: wrap;
   gap: 14px;
   font-size: 11px;
 }
@@ -342,6 +343,30 @@ footer .brand {
   color: var(--ink);
 }
 
+@media (max-width: 900px) {
+  .site-header,
+  main,
+  footer {
+    width: min(100% - 40px, 1040px);
+  }
+
+  .hero {
+    padding-block: 88px 96px;
+  }
+
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects::after {
+    width: 34%;
+  }
+
+  .footer-meta {
+    gap: 8px 12px;
+  }
+}
+
 @media (max-width: 640px) {
   .site-header,
   main,
@@ -354,12 +379,12 @@ footer .brand {
   }
 
   .site-header nav {
-    gap: 18px;
+    gap: clamp(12px, 4vw, 18px);
     font-size: 13px;
   }
 
   .hero {
-    padding: 76px 0 80px;
+    padding: 68px 0 74px;
   }
 
   .hero::before {
@@ -398,12 +423,19 @@ footer .brand {
     display: block;
   }
 
+  .section-heading h2,
+  .about h2,
+  .contact h2 {
+    font-size: clamp(23px, 6vw, 27px);
+  }
+
   .section-heading > p {
     margin-top: 8px;
   }
 
   .project-card {
-    min-height: 175px;
+    min-height: 160px;
+    padding: 18px;
   }
 
   .project-link {
@@ -426,8 +458,53 @@ footer .brand {
     margin: 4px 0 0;
   }
 
+  footer {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding-block: 16px;
+  }
+
   .footer-meta {
-    display: none;
+    order: 3;
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header,
+  main,
+  footer {
+    width: calc(100% - 28px);
+  }
+
+  .site-header {
+    min-height: 64px;
+  }
+
+  .brand {
+    font-size: 16px;
+  }
+
+  .brand span {
+    font-size: 12px;
+  }
+
+  .site-header nav {
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  .hero h1 {
+    font-size: clamp(32px, 10vw, 36px);
+  }
+
+  .hero::before {
+    inset-inline-start: 24px;
+    inset-inline-end: -8px;
+  }
+
+  .contact a {
+    font-size: 14px;
   }
 }
 
